@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Aroma & Grão</title>
+    <style>
+        /* Mesmos estilos do index.html para consistência */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f9f5f0; color: #4a3b32; }
+        header { background-color: #6f4e37; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #5c4030; padding: 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+        h1 { text-align: center; color: #6f4e37; }
+        h2 { border-bottom: 2px solid #d2b48c; padding-bottom: 10px; margin-top: 40px; color: #5c4030; }
+        
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .menu-item { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+        .menu-item h3 { margin: 10px 0; color: #6f4e37; }
+        .price { font-weight: bold; color: #d2b48c; font-size: 1.2em; }
+        
+        footer { background-color: #3e2f26; color: #ccc; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.8em; }
+        footer a { color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>☕ Aroma & Grão</h1>
+        <p>Nosso Cardápio</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="container">
+        <h1>Nossas Delícias</h1>
+        
+        <h2>Cafés Especiais</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Espresso</h3>
+                <p>Intenso e aromático.</p>
+                <p class="price">R$ 6,00</p>
+            </div>
+            <div class="menu-item">
+                <h3>Cappuccino</h3>
+                <p>Espresso com leite vaporizado.</p>
+                <p class="price">R$ 12,00</p>
+            </div>
+            <div class="menu-item">
+                <h3>Latte Macchiato</h3>
+                <p>Leite com toque de café.</p>
+                <p class="price">R$ 14,00</p>
+            </div>
+        </div>
+
+        <h2>Doces & Sobremesas</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Bolo de Cenoura</h3>
+                <p>Com cobertura de chocolate.</p>
+                <p class="price">R$ 10,00</p>
+            </div>
+            <div class="menu-item">
+                <h3>Croissant</h3>
+                <p>Manteiga ou Recheado.</p>
+                <p class="price">R$ 15,00</p>
+            </div>
+            <div class="menu-item">
+                <h3>Torta de Limão</h3>
+                <p>Caseira e refrescante.</p>
+                <p class="price">R$ 12,00</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Aroma & Grão Cafeteria. Todos os direitos reservados.</p>
+        <p>
+            <a href="politica-de-privacidade.html">Política de Privacidade</a> | 
+            <a href="index.html">Voltar ao Início</a>
+        </p>
+    </footer>
+
+</body>
+</html>

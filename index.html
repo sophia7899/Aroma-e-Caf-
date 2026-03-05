@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma & Grão - Cafeteria</title>
+    <style>
+        /* Estilos Gerais */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f9f5f0; color: #4a3b32; }
+        header { background-color: #6f4e37; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #5c4030; padding: 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        
+        /* Hero Section */
+        .hero { background-color: #d2b48c; padding: 50px 20px; text-align: center; }
+        .hero h1 { font-size: 2.5em; margin-bottom: 10px; }
+        
+        /* Formulário */
+        .container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #6f4e37; border-bottom: 2px solid #d2b48c; padding-bottom: 10px; }
+        
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], input[type="tel"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        
+        /* Checkbox LGPD */
+        .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; font-size: 0.9em; }
+        .checkbox-group input { margin-top: 5px; }
+        .checkbox-group a { color: #6f4e37; text-decoration: underline; }
+
+        button { background-color: #6f4e37; color: white; border: none; padding: 15px 30px; font-size: 1em; cursor: pointer; width: 100%; border-radius: 4px; margin-top: 20px; }
+        button:hover { background-color: #5c4030; }
+
+        /* Rodapé */
+        footer { background-color: #3e2f26; color: #ccc; text-align: center; padding: 20px; margin-top: 40px; font-size: 0.8em; }
+        footer a { color: white; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>☕ Aroma & Grão</h1>
+        <p>O melhor café da cidade</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Faça seu pedido online</h2>
+        <p>Preencha o formulário abaixo para agendar sua retirada.</p>
+    </div>
+
+    <div class="container">
+        <h2>Formulário de Pedido</h2>
+        <!-- O formulário chama a função JS para validar o checkbox -->
+        <form id="pedidoForm" onsubmit="validarFormulario(event)">
+            
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="form-group">
+                <label for="pedido">Qual seu pedido?</label>
+                <input type="text" id="pedido" name="pedido" required placeholder="Ex: 1 Cappuccino, 1 Bolo de Cenoura">
+            </div>
+
+            <!-- Checkbox Obrigatório da Política de Privacidade -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="aceitePolitica" name="aceitePolitica" required>
+                <label for="aceitePolitica">
+                    Li e concordo com a <a href="politica-de-privacidade.html" target="_blank">Política de Privacidade</a> da Aroma & Grão.
+                </label>
+            </div>
+
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Aroma & Grão Cafeteria. Todos os direitos reservados.</p>
+        <p>
+            <a href="politica-de-privacidade.html">Política de Privacidade</a> | 
+            <a href="#">Termos de Uso</a>
+        </p>
+    </footer>
+
+    <script>
+        function validarFormulario(event) {
+            // Pega o elemento do checkbox
+            const checkbox = document.getElementById('aceitePolitica');
+            
+            // Se não estiver marcado, impede o envio e mostra alerta
+            if (!checkbox.checked) {
+                event.preventDefault(); // Impede o envio do formulário
+                alert("Você precisa aceitar a Política de Privacidade para continuar.");
+                return false;
+            }
+            
+            // Se estiver marcado, o formulário é enviado normalmente
+            alert("Pedido enviado com sucesso! Obrigado por aceitar nossa política.");
+        }
+    </script>
+
+</body>
+</html>
